@@ -96,4 +96,32 @@ public class TwoSum{
   int pair[ ][ ] = twosum(a,target -a);
   StdOut.println(pair);     
   }
+  
+//SOLUTION 4. TWO POINERS(time o(n), space o(1))
+
+public class TwoSum{
+     public int[ ] TwoSum(int[ ] numbers, int target ) {
+          int i = 0, j = numbers.length-1;//assume all inputs are loaded,    
+          while(i < j) {
+          int sum = numbers[i] + numbers[j];
+          if(sum < target) {
+            i++; 
+          }
+          else if(sum > target) {
+            j--;
+          }
+          else {
+            return new int[ ] { i + 1, j + 1 };
+          }
+          }
+     throw new IllegalArgumentException("no such two sum pairs");
+     }
+     public static void main (String[ ] args) {
+         In in = new In(args[target]);
+         int[ ] array = in.readAllInts( );
+         int pair[ ][ ] = TwoSum(i, j);
+         StdOut.println(pair);  
+    }
+}
+
 }
